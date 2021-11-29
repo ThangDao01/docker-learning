@@ -24,7 +24,7 @@ Route::get('/test', [AccountController::class,'getSeed']);
 
 Route::get('/listArticle', [ArticleController::class, 'listArticle']);
 
-Route::get('news/{id}',function ($id){
+Route::get('/news/{id}',function ($id){
     return Article::find($id);
 });
 

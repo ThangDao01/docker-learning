@@ -945,13 +945,13 @@
                                         @foreach($listArticle as $article)
                                             <tr>
                                                 <td>{{ $article->id }}</td>
-                                                <td>{{ $article->title }}</td>
+                                                <td>{!! html_entity_decode($article->title)  !!}</td>
                                                 <td>
                                                     <img src="{{$article->thumbnail}}" width="100px" alt="{{$article->thumbnail}}">
                                                 </td>
                                                 <td>{{ $article->category }}</td>
                                                 <td>
-                                                    {!! $article->description !!}
+                                                    {!! html_entity_decode($article->description)  !!}
                                                 </td>
                                                 <td>{{ $article->created_at }}</td>
                                                 <td>
@@ -961,14 +961,8 @@
                                                 </td>
                                             </tr>
                                         @endforeach
-                                        <tbody v-for="(article,index) in ListArticle.data" :key="index">
-
-                                        </tbody>
                                     </table>
                                     <!-- datatable end -->
-                                    <div v-if="!ListArticle">
-                                        null data
-                                    </div>
                                 </div>
                             </div>
                         </div>
